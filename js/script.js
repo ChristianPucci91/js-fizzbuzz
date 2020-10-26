@@ -11,30 +11,41 @@ if is divisible by 5 has to show "Buzz" and if is divisible by both has to
 show "FizzBuzz".
 So we'll have an if & else condition inside a while/for cycle*/
 
-// creating a variable for the numbers
+// creating variable to link with html
+
+list = document.getElementById('stampa');
+
+// creating a variable for the numbers & to print
 var number = "";
+var toPrint = "";
 
 for (var i = 1; i < 101; i++) {
    // in this exercise we'll write a variable with same value of the counter
    // so every cycle the value will be +1
    number = i;
-
-   // if condition to check if the number is divisible by 3 & 5 using modules
-   if (number % 3 === 0 && number % 5 ===0 ) {
-     number = "FizzBuzz";
-     // if number is divisible by 3 & 5 in console we'll have "FizzBuzz"
-     console.log(number);
-   } else if (number % 5 === 0) {
-     number = "Buzz";
-     // if number is divisible by 5 in console we'll have "Buzz"
-     console.log(number);
-   } else if (number % 3 === 0 ) {
-     number = "Fizz";
-     // if number is divisible by 3 in console we'll have "Fizz"
-     console.log(number);
-   }else {
-     // if number is not divisible by 5 or 3 or both in console we'll have normal number
-     console.log(number);
-   }
-
+       // check if the number is divisible by 3 & 5 using modules
+       if (number % 3 === 0 && number % 5 ===0 ) {
+         toPrint += "<li>FizzBuzz</li>";
+         // if number is divisible by 3 & 5 in console we'll have "FizzBuzz"
+         // console.log(toPrint);
+       } else if (number % 5 === 0) {
+         toPrint += "<li>Buzz</li>";
+         // if number is divisible by 5 in console we'll have "Buzz"
+         // console.log(toPrint);
+       } else if (number % 3 === 0 ) {
+         toPrint += "<li>Fizz</li>";
+         // if number is divisible by 3 in console we'll have "Fizz"
+         // console.log(toPrint);
+       }else {
+         // if number is not divisible by 5 or 3 or both in console we'll have normal number
+         toPrint += "<li>" + number + "</li>"
+         // console.log(toPrint);
+       }
+       // if condition end
 }
+// cycle for end
+
+// Taking "list" variable and tell him to use "toPrint" variable as an innerHTML cotent
+// to print every <li> tag inside <ol> in html.
+
+list.innerHTML = toPrint;
